@@ -4,7 +4,8 @@ Author: Meghana Balasubramanian
 
 About the program:
 
-BLAST-Viewer is a web application designed to visualize the BLAST output generated from the command line in a more readable format using a web browser. The user can choose between different BLAST programs and databases available at NCBI or utilize their own database.
+BLAST-Viewer is a web application designed to visualize the BLAST output generated from the command line in a more readable format using a web browser. 
+The user can choose between different BLAST programs and databases available at NCBI or utilize their own database.
 
 
 Installation:
