@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+div.static {position:static; border:3px solid black;}
+body {
+background-image:url("https://www.curtainsjs.com/images/intro-background.jpg")
+}
+</style>
+
+<script>
+function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    db_typeo.style.display = "block";
+  } else {
+     db_typeo.style.display = "none";
+  }
+}
+</script>
+
+<br>
+<title position:absolute;>HTML Forms</title>
+</head>
+
+
+<h1>Web Application for BLAST</h1>
+<br>
+<p> The program carries out BLAST search for a FASTA/FASTQ sequence. </p>
+<p> It also allows the user to choose between different databases and BLAST programs. </p>
+
+<body>
+<form action="{{ url_for("gfg")}}" method="post" autocomplete="off"> 
+    <label for="sequence">Input Sequence:</label> 
+    <textarea name="seq" rows="10" cols="40" id="seq"></textarea>
+    <br>
+    <br>
+ 
+    <label for="input_type">Select format of input:</label>
+    <select style="text-align:center; width:70px; height:30px; border:1px solid; 
+       border-radius:4px; box-sizing:border-box; background-color:powderblue; 
+       font-size: 12px; resize: none;"
+    name="ip_type" id="fasta">
+    <option value="fasta">FASTA</option>
+    <option value="fastq">FASTQ</option>
+    </select>
+    <br>
+    <br>
+    <label for="b_type">Choose program:</label>
+    <select style="text-align:left; width:70px; height:30px; border:1px solid; 
+       border-radius:4px; box-sizing:border-box; background-color:powderblue; 
+       font-size: 12px; resize: none;"
+    name="blast_type" id="blast_type">
+    <option value="blastn">Blastn</option>
+    <option value="blastp">Blastp</option>
+    <option value="blastx">Blastx</option>
+    <option value="tblastx">tBlastx</option>
+    <option value="tblastn">tBlastn</option>    
+    </select>
+    <br>
+    
+    <br>
+    <label for="myCheck">Enter own database:</label> 
+    <input type="checkbox" name="myCheck" id="myCheck" onclick="myFunction()">
+    <input type="text" name="db_typeo" id="db_typeo" value="None" style="display:none">
+    <br>
+    <label for="database">Database:</label>
+    <select style="text-align:left; width:160px; height:30px; border:1px solid; 
+       border-radius:4px; box-sizing:border-box; background-color:powderblue; 
+       font-size: 12px; resize: none;" 
+    name="database" id="database">
+    <option value="nt">Nucleotide Collection </option>
+    <option value="wgs">Whole-genome shotgun-contigs</option>
+    <option value="est">Expressed sequence tags</option>
+    </select>
+    
+    <br>
+    <br>
+    <label for="evalue">e-value:</label>
+    <input  type="text" id="evalue" name="e_value" placeholder="0.05" style="
+    text-align:left;border-radius:4px; box-sizing:border-box; 
+    background-color:powderblue;">
+    
+    
+    <br>
+    <br>
+    <button type="submit" 
+    style="text-align:center; width:70px; height:30px; border:1px solid; 
+       border-radius:4px; box-sizing:border-box; background-color:powderblue; 
+       font-size: 12px; resize: none;" >BLAST</button> 
+</body>
+</html>
+
+

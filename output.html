@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+div.static {position:static; border:3px solid black;}
+body {
+background-image:url("https://www.curtainsjs.com/images/intro-background.jpg")
+}
+</style>
+<title>HTML Forms</title>
+</head>
+<h1> BLAST-Output </h1>
+{{output}}
+
+{% for alignment in blast_record.alignments %}
+    {% for hsp in alignment.hsps %}
+        {% if hsp.expect < e_value_threshold %}
+            <pre>
+            {{"****Alignment****"}}
+            {{"sequence:", alignment.title}}
+            {{"length:", alignment.length}}
+            {{"e value:", hsp.expect}} 
+            {{hsp.query}}
+            {{hsp.match}}
+            {{hsp.sbjct}}
+            </pre>
+        {% endif %}
+    {% endfor %}   
+{% endfor %}
+</html>
