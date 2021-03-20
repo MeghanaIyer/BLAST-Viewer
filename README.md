@@ -9,6 +9,7 @@ The user can choose between different BLAST programs and databases available at 
 
 
 Installation:
+
 The program is written in python and HTML and is combined together using Flask, and uses the following versions:
 - Python 3.8.5
 - pip 21.0.1
@@ -24,6 +25,7 @@ Depending on the environment utilized by the you, you may choose to download the
  	https://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/
 
 Running the program:
+
 The program can be run from the terminal as:
 	python blast-viewer.py
 
@@ -36,6 +38,7 @@ Navigating to the link displayed, the user may input the following:
 
 
 Results:
+
 The result generated is an alignment file which is downloaded to your working directory as outputhtml.xml. The alignment visaulization, however, can be viewed on the web page.
 
 
